@@ -51,6 +51,7 @@ public class ClassUI extends javax.swing.JFrame {
         for (ContextResponses contextResponse : crc.getContextResponses()) {
             jComboBox1.addItem(contextResponse.getContextElement().getId());
         }
+        
     }
 
     /**
@@ -341,7 +342,7 @@ public class ClassUI extends javax.swing.JFrame {
                     + "}";
 
             NgsiRequest ng = new NgsiRequest();
-            String resposta = ng.sendPost("/v1/queryContext", bodyUpdate);
+            String resposta = ng.sendPost("/v1/updateContext", bodyUpdate);
 
             ObjectMapper mapper = new ObjectMapper();
             try {
@@ -439,6 +440,8 @@ public class ClassUI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        ClassUI c = new ClassUI();
+        c.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
